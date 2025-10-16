@@ -1,0 +1,12 @@
+{% extends 'tasks/base.html' %}
+{% block title %}Task Details{% endblock %}
+{% block content %}
+<h2>{{ task.title }}</h2>
+<p><strong>Description:</strong> {{ task.description }}</p>
+<p><strong>Status:</strong> {{ task.status }}</p>
+<p><strong>Created at:</strong> {{ task.created_at }}</p>
+
+<a href="{% url 'update_task' task.id %}" class="btn btn-primary">Edit</a>
+<a href="{% url 'delete_task' task.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'list_task' %}" class="btn btn-secondary">Back</a>
+{% endblock %}
